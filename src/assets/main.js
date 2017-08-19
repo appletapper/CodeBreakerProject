@@ -10,6 +10,15 @@ function guess() {
     }
 }
 
+if(!validateInput(input.value)) {
+  return;
+}
+attempt.value++;
+
+functions getResults(input) {
+  let html ='';
+}
+
 //New project functions...
 
 //setHiddenFields calculates a random number between 0 to 9999 (inclusive)
@@ -30,4 +39,5 @@ function validateInput(input) {
     setMessage('Guesses must exactly four numbers long, or else prepare to get your butt kicked! ;-)');
     return false;
   }
+  return true;
 }
