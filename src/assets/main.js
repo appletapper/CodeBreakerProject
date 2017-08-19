@@ -17,8 +17,12 @@ attempt.value++;
 
 if(getResults(input.value)) {
   setMessage('You Win!!!');
+  showAnswer(true);
+  showReplay();
 } else if(attempt.value >= 10) {
   setMessage('You Lose!!!')
+  showAnswer(false);
+  showReplay();
 } else {
   setMessage('Incorrect, have another try!');
 }
@@ -56,6 +60,21 @@ function setHiddenFields() {
 
 function setMessage(message) {
   document.getElementById('message').innerHTML = message;
+}
+
+function showAnswer(success) {
+  let code = document.getElementById('code');
+  if(success) {
+    code.className += ' success'
+  } else {
+    code.className += ' failure'
+  }
+  code.innerHTML = answer.value;
+}
+
+function showReplay() {
+  document.getElementById('guessing-div').style.display = "none";
+  document.getElementById('replay-div').style.display = "block";
 }
 
 function validateInput(input) {
