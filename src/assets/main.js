@@ -6,4 +6,9 @@ function guess() {
     //add functionality to guess function here
 }
 
-//implement new functions here
+//New project functions...
+
+//setHiddenFields calculates a random number between 0 to 9999 (inclusive)
+function setHiddenFields() {
+  answer.value = Math.floor(Math.random() * 10000);
+}
